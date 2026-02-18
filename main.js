@@ -9,6 +9,7 @@ function createWindow() {
         transparent: true, // Transparent background
         resizable: false, // Fixed size like a widget
         hasShadow: true,
+        icon: path.join(__dirname, 'assets/icon.png'),
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
