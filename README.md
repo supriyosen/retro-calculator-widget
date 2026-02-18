@@ -1,9 +1,13 @@
-# How to Run the Calculator App
+# Retro Calculator Widget
+
+A retro-themed calculator widget for macOS, built with Electron.
+
+## How to Run the Calculator App
 
 1. Open your terminal.
-2. Navigate to this directory:
+2. Navigate to the project directory:
    ```bash
-   cd /Users/supriyosen/Desktop/Calculater
+   cd retro-calculator-widget
    ```
 3. Install dependencies:
    ```bash
@@ -20,9 +24,9 @@ To turn this into a real Mac app you can drag to Applications:
 
 
 1. Open Terminal.
-2. Type this command and press Enter (this enters the folder):
+2. Navigate to the project directory:
    ```bash
-   cd /Users/supriyosen/Desktop/Calculater
+   cd retro-calculator-widget
    ```
 3. Run this command one time:
 
@@ -42,7 +46,6 @@ To turn this into a real Mac app you can drag to Applications:
 To share this calculator with friends or specific users:
 
 1.  **Do NOT** just send the `.app` file directly (it might break).
-
 2.  Go to the `release-builds/retro-calculator-darwin-x64` folder.
 3.  **You only need the `retro-calculator.app` file.** (You can ignore the LICENSE and VERSION text files).
 4.  **Right-click** on `retro-calculator.app` and select **Compress "retro-calculator.app"**.
@@ -81,6 +84,3 @@ If you are a developer or want to build it yourself from source:
 4.  **Run the App**:
     *   Find the `.app` file in `release-builds/`.
     *   Drag it to your Applications folder.
-
-
-
