@@ -1,0 +1,165 @@
+:root {
+    --bg-color: #D6D6D6;
+    --calc-body: #EFE9DB;
+    --screen-bg: #222222;
+    --screen-text: #EFE9DB;
+
+    /* Button Colors */
+    --btn-function: #9CA09A;
+    /* Grey/Greenish for AC */
+    --btn-number: #EE6055;
+    /* Coral Red */
+    --btn-operator: #6A8E9C;
+    /* Muted Blue */
+    --btn-text: #222222;
+    --btn-text-light: #EFE9DB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-container {
+    background-color: var(--calc-body);
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    width: 360px;
+    -webkit-app-region: drag;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.display {
+    background-color: var(--screen-bg);
+    border-radius: 20px;
+    height: 180px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: var(--screen-text);
+}
+
+.current-operand {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.previous-operand {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    margin-top: auto;
+    /* Pushes it to bottom if we want */
+    /* Wait, the reference image has the RESULT (75) mostly in the middle/bottom and the equation below it? 
+       Actually looks like:
+       [          ]
+       [      75  ] (Large)
+       [ 28+67-20 ] (Small)
+    */
+    order: 2;
+    /* Visual reordering if needed, but let's keep simple flow */
+}
+
+/* Adjusting flow to match image: Large number, then small equation below it? 
+   Or Small equation top, Large number bottom? 
+   Standard calcs: History top, Current Bottom. 
+   Image: '75' is large. '28+67-20' is small and BELOW '75'. 
+   Let's use Flexbox to position them.
+*/
+.display {
+    justify-content: center;
+    gap: 10px;
+}
+
+.current-operand {
+    order: 1;
+    /* Large number */
+}
+
+.previous-operand {
+    order: 2;
+    /* Small number below */
+    font-size: 1rem;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    -webkit-app-region: no-drag;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Text styling */
+    color: inherit;
+    font-weight: 500;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+}
+
+/* Color assignments */
+.btn.function {
+    background-color: var(--btn-function);
+    color: #333;
+}
+
+.btn.number {
+    background-color: var(--btn-number);
+    color: #333;
+}
+
+.btn.operator {
+    background-color: var(--btn-operator);
+    color: #333;
+}
+
+.btn.wide {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 35px;
+    /* Pill shape */
+    justify-content: flex-start;
+    padding-left: 28px;
+}
+
+/* Remove 0 spanning if not in image? 
+   Image has 0 as a WIDE button. 
+   Image: [  0  ] [ . ] [ = ] 
+   So 0 spans 2 columns.
+*/
