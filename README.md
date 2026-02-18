@@ -35,7 +35,7 @@ To turn this into a real Mac app you can drag to Applications:
    ```
 3. Run the build command:
    ```bash
-   npm run package
+   npm run package-mac
    ```
 4. A new folder called **release-builds** will appear. 
 5. Inside it, you will find **retro-calculator-darwin-x64**. 
@@ -62,6 +62,14 @@ Since this app is not signed by Apple (it's a personal project):
     *   Select **Open**.
     *   Click **Open** in the dialog box.
 
+### Building for Other Operating Systems
+The source code works on Mac, Windows, and Linux.
+
+- **Mac**: `npm run package-mac`
+- **Windows**: `npm run package-win`
+- **Linux**: `npm run package-linux`
+
+
 6.  *Note: If they just double-click it, macOS might block it saying it's from an unidentified developer.*
 
 
@@ -79,7 +87,7 @@ If you are a developer or want to build it yourself from source:
     ```
 3.  **Build the App**:
     ```bash
-    npm run package
+    npm run package-mac
     ```
 4.  **Run the App**:
     *   Find the `.app` file in `release-builds/`.
