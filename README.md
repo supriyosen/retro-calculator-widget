@@ -42,6 +42,7 @@ To turn this into a real Mac app you can drag to Applications:
 To share this calculator with friends or specific users:
 
 1.  **Do NOT** just send the `.app` file directly (it might break).
+
 2.  Go to the `release-builds/retro-calculator-darwin-x64` folder.
 3.  **You only need the `retro-calculator.app` file.** (You can ignore the LICENSE and VERSION text files).
 4.  **Right-click** on `retro-calculator.app` and select **Compress "retro-calculator.app"**.
@@ -57,7 +58,8 @@ Since this app is not signed by Apple (it's a personal project):
     *   **Right-click** (or Control-click) the app.
     *   Select **Open**.
     *   Click **Open** in the dialog box.
-    *   *Note: If they just double-click it, macOS might block it saying it's from an unidentified developer.*
+
+6.  *Note: If they just double-click it, macOS might block it saying it's from an unidentified developer.*
 
 
 ## Installation from GitHub
@@ -79,3 +81,6 @@ If you are a developer or want to build it yourself from source:
 4.  **Run the App**:
     *   Find the `.app` file in `release-builds/`.
     *   Drag it to your Applications folder.
+
+
+
